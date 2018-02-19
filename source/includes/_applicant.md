@@ -62,7 +62,7 @@ The Applicant APIs allow a partner to search to see if an applicant has a Common
 application/json
 ```
 
-The applicant search allows partners to determine if a Common App account already exists for a particular student based on their email address.  If the email matches an existing account, the partner will receive the Common App ID of that account and a response as to whether the account exists in the current season or the previous.  If the email does not match, the partner will receive a reply that no account was found.
+The applicant search allows partners to determine if a Common Application account already exists for a particular student based on their email address and date of birth.  If the email and date of birth match an existing account, the partner will receive the Common App ID of that account and a response as to whether the account exists in the current season or the previous.  If the email and date of birth do not match, the partner will receive a reply that no account was found.
 
 The service will provide partners with the ability to determine if a student has an existing Common App account so that the student can be appropriately redirected to either the Common App login page or to complete the applicant creation process. Use of this check is required in order to use the applicant creation method; if it is ignored and an account exists, then the POST will fail upon attempting to use the applicant creation method.
 
