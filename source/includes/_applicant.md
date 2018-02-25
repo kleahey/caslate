@@ -1,21 +1,15 @@
-# Account Creation
+# Applicant APIs
 
 ## Overview
 
-The Applicant Creation API allows an external partner organization to pass existing student data along with the user in order to create a new Applicant account in the Common Applicant system. This will be a benefit to student users by allowing them to save time and more easily create a Common App account using the information they have already provided in the partner’s system.
+The Applicant APIs allow a partner to search to see if an applicant has a Common Application account and if not, to pass existing student data along with the user in order to create a new Applicant account in the Common Applicant system. This will be a benefit to student users by allowing them to save time and more easily create a Common App account using the information they have already provided in the partner’s system.
 
-The account creation integration consists of two components:
+### Applicant APIs:
 
-1. Applicant search
-2. Applicant creation
+1. Applicant Search
+2. Applicant Creation
 
-## Recommended implementation
-
-The recommended implementation is to offer the student one action, then utilize the student account check web service to programmatically determine if the student should be sent to the Common App login screen or to the Common App account creation process.
-
-![alt text](/images/account_creation.png)
-
-## Applicant search
+## Applicant Search
 
 > JSON Schema to validate input parameters of getapplicant API (Pre Registration Check API)
 
@@ -68,17 +62,17 @@ The recommended implementation is to offer the student one action, then utilize 
 application/json
 ```
 
-The applicant search allows partners to determine if a Common App account already exists for a particular student based on their email address.  If the email matches an existing account, the partner will receive the Common App ID of that account and a response as to whether the account exists in the current season or the previous.  If the email does not match, the partner will receive a reply that no account was found.
+The applicant search allows partners to determine if a Common Application account already exists for a particular student based on their email address and date of birth.  If the email and date of birth match an existing account, the partner will receive the Common App ID of that account and a response as to whether the account exists in the current season or the previous.  If the email and date of birth do not match, the partner will receive a reply that no account was found.
 
-The service will provide partners with the ability to determine if a student has an existing Common App account so that the student can be appropriately redirected to either the Common App login page or to complete the account creation process. Use of this check is required in order to use the Account creation method; if it is ignored and an account exists, then the POST will fail upon attempting to use the Account creation method.
+The service will provide partners with the ability to determine if a student has an existing Common App account so that the student can be appropriately redirected to either the Common App login page or to complete the applicant creation process. Use of this check is required in order to use the applicant creation method; if it is ignored and an account exists, then the POST will fail upon attempting to use the applicant creation method.
 
-It will also allow partners the ability to confirm an applicant created the Account Creation process once they were handed off to the redirect page.
+It will also allow partners the ability to confirm an applicant created the Applicant Creation process once they were handed off to the redirect page.
 
 Mock API Postman Collection: [OpenAPI.Register-alpha-swagger-postman.json](/json/OpenAPI.Register-alpha-swagger-postman-applicant-search.json)
 
 Mock API End Point: [Register Applicant Mock API](https://api.delta.devca.net/applicant/)
 
-## Applicant creation
+## Applicant Creation
 
 > JSON Schema for Applicant Registration:
 
@@ -283,9 +277,9 @@ Mock API End Point: [Register Applicant Mock API](https://api.delta.devca.net/ap
 application/json
 ```
 
-The Common App account creation process will be completed with a separate method allowing the partner to POST the actual registration data.
+The Common App applicant creation process will be completed with a separate method allowing the partner to POST the actual registration data.
 
-The data elements that must be sent to complete the account creation process are:
+The data elements that must be sent to complete the applicant creation process are:
 
 * Email Address
 * First Name
@@ -300,3 +294,9 @@ Requirements (field lengths, valid value lists, etc) for each data element are a
 Mock API Postman Collection: [OpenAPI.Register-alpha-swagger-postman.json](/json/OpenAPI.Register-alpha-swagger-postman-applicant-creation.json)
 
 Mock API End Point: [Register Applicant Mock API](https://api.delta.devca.net/applicant/)
+
+## Recommended Implementation
+
+The recommended implementation is to offer the student one action, then utilize the student account check web service to programmatically determine if the student should be sent to the Common App login screen or to the Common App applicant creation process.
+
+![alt text](/images/account_creation.png)
