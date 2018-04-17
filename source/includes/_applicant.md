@@ -4,6 +4,50 @@
 
 The Applicant APIs allow a partner to search to see if an applicant has a Common Application account and if not, to pass existing student data along with the user in order to create a new Applicant account in the Common Applicant system. This will be a benefit to student users by allowing them to save time and more easily create a Common App account using the information they have already provided in the partner’s system.
 
+## Data Requirements & Validations
+### Field Lengths:
+- <b>First, Middle, Last Names cannot be more than <u>50 characters</u></b>
+- <b>Address lines 1,2,3 cannot be more than <u>60 characters</u></b>
+- <b>City, State, County cannot be more than <u>30 characters</u></b>
+- <b>Zip cannot be more than <u>10 characters</u></b>
+
+### Email Validations:
+
+Validation message | Validation
+:--------------- | :-------
+"Email should not be empty." | Is displayed when email is empty
+"Email must include one @" | Is displayed when there is no @ in email
+"Email is invalid" | Is displayed when there is no text after "@"
+"Email cannot have more than 64 characters before the @" | Is displayed when there are more than 64 chars before "@"
+"Email must contain at least one dot after @." | Is displayed when there is no dot after "@"
+"Email must not contain dots in succession." | Is displayed when there are 2 dots in succession
+"Email before and after @ cannot start or end with a dot." | Is displayed when email ends with the dot
+"Email before and after @ cannot start or end with a dot." | Is displayed when email starts with the dot
+"Email must not contain more than one @." | Is displayed when email contains two "@"
+"Email has special characters we can't accept." | Is displayed is displayed when email contains unacceptable special characters
+"Email has special characters we can't accept." | Is displayed is displayed when email contains unacceptable special characters in domain part
+"Email is invalid." | Is displayed is displayed when there are more than 63 chars after dot
+"Email is invalid." | Is displayed is displayed when there is 1 char after dot
+"Email has special characters we can't accept." | Is displayed is displayed when email contains unacceptable special characters after dot
+"Email should not be more than 254 chars" | Is displayed is displayed when email have more than 254 chars
+
+###Address Validations:
+
+- Validation message <b>"Country is invalid"</b> is displayed when invalid Country under Address is passed. <br/><b>For example:</b> Pass a country which doesn't exist.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Min and Max length validation on Country under Address should be exactly 3
+- Validation message <b>"State is Invalid"</b> is displayed when invalid State under Address is passed if country is US, Canada and China. <br/><b>For Example:</b> Pass a Canadian Province but Country is United States.
+- Zip code is required without any specific format when country is China.
+
+###Miscellaneous Validations
+- Validation message <b>"Country Code is invalid"</b> when a CountryCode which doesn't exist is passed under phone.
+- Leap year validation on Birthdate.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Validation message should be displayed when "02/29/1999" birthdate is passed
+- Start year validation matches the choice group<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Acceptable inputs should be 0,1,2<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Validation message updated to read "Start year" not StartYear<br/>
+- Validate Application Type<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Validation message "Applicant Type is invalid" is displayed when Application type(FY/TR) is wrong.
+
 ### Applicant APIs:
 
 1. Applicant Search
