@@ -33,20 +33,20 @@ Validation message | Validation
 
 ###Address Validations:
 
-- Validation message "Country is invalid" is displayed when invalid Country under Address is passed. For ex: Pass a country which doesn't exist
-⋅⋅⋅ - Min and Max length validation on Country under Address should be exactly 3
-- Validation message "State is Invalid" is displayed when invalid State under Address is passed if country is US, Canada and China. For Ex: Pass a Canada State but Country is US
-- Zip code is required without any specific format when country is China
+- Validation message <b>"Country is invalid"</b> is displayed when invalid Country under Address is passed. <br/><b>For example:</b> Pass a country which doesn't exist.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Min and Max length validation on Country under Address should be exactly 3
+- Validation message <b>"State is Invalid"</b> is displayed when invalid State under Address is passed if country is US, Canada and China. <br/><b>For Example:</b> Pass a Canadian Province but Country is United States.
+- Zip code is required without any specific format when country is China.
 
 ###Miscellaneous Validations
-- Validation message "Country Code is invalid" when a CountryCode which doesn't exist is passed under phone.
-- Leap year validation on Birthdate.
-⋅⋅⋅ - Validation message should be displayed when "02/29/1999" birthdate is passed
-- Start year validation matches the choice group
-⋅⋅⋅ - Acceptable inputs should be 0,1,2
-⋅⋅⋅ - Validation message updated to read "Start year" not StartYear
-- Validate Application Type
-⋅⋅⋅ - Validation message "Applicant Type is invalid" is displayed when Application type(FY/TR) is wrong.
+- Validation message <b>"Country Code is invalid"</b> when a CountryCode which doesn't exist is passed under phone.
+- Leap year validation on Birthdate.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Validation message should be displayed when "02/29/1999" birthdate is passed
+- Start year validation matches the choice group<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Acceptable inputs should be 0,1,2<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Validation message updated to read "Start year" not StartYear<br/>
+- Validate Application Type<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Validation message "Applicant Type is invalid" is displayed when Application type(FY/TR) is wrong.
 
 ### Applicant APIs:
 
